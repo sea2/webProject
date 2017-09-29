@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>首页</title>
+<meta name="viewport"
+	content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+<link rel="stylesheet" href="css/default.css">
+</head>
+<body>
+
+	<div class="head">
+		<div class="swipe_banners">
+			<ul>
+				<li><img src="img/light1.jpg" alt=""></li>
+				<li><img src="img/light2.jpg" alt=""></li>
+				<li><img src="img/light3.jpg" alt=""></li>
+			</ul>
+		</div>
+		<div class="swipe_bars">
+			<ul>
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<div id="main">
+		<div class="mainTop">
+
+			<a href="tab/index.html"> <span><img src="img/logo.png"
+					alt="" height="36" class="mainLogo" />大地灯饰</span>
+			</a>
+		</div>
+		<div class=" mainSide">
+			<a href="describe.html"> <span class="wordPro"> <img
+					class="pro_img" src="img/mainPic1.jpg" width="72" height="54" />
+					<p>商家简介</p>
+			</span>
+			</a>
+		</div>
+		<div class=" mainSide">
+			<a href="product.html"> <span class="wordPro"> <img
+					class="pro_img" src="img/mainPic2.jpg" width="72" height="54" />
+					<p>产品展示</p>
+			</span>
+			</a>
+		</div>
+		<div class="clear"></div>
+		<div class=" mainSide">
+			<a href="activity.html"> <span class="wordPro"> <img
+					class="pro_img" src="img/mainPic3.jpg" width="72" height="54" />
+					<p>实景展示</p>
+			</span>
+			</a>
+		</div>
+		<div class=" mainSide">
+			<a href="guide.html"> <span class="wordPro"> <img
+					class="pro_img" src="img/mainPic5.jpg" width="72" height="54" />
+					<p>最新动态</p>
+			</span>
+			</a>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/tool.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".mainLogo").on("click", function() {
+			$(".fade").fadeToggle();
+		})
+	})
+</script>
+</html>
