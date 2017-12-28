@@ -72,6 +72,41 @@
 		$(".mainLogo").on("click", function() {
 			$(".fade").fadeToggle();
 		})
-	})
+	});
+
+	$(function() {
+
+		$.ajax({
+
+			type : "get", //jquey是不支持post方式跨域的
+
+			async : false,
+
+			url : "http://192.168.2.75:8080/v1.0/app", //跨域请求的URL
+
+			dataType : "jsonp",
+
+			//传递给请求处理程序，用以获得jsonp回调函数名的参数名(默认为:callback)
+
+			jsonp : "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
+			jsonpCallback : "jsonpCallback",
+
+			//成功获取跨域服务器上的json数据后,会动态执行这个callback函数
+
+			success : function(json) {
+
+				//  alert(json.code);
+				var str = "";
+				for (var i = 0; i < json.list.length; i++) {
+					str = str + json.list[i].id;
+				}
+				alert(str);
+			},
+			error : function(a, b, c) {
+				alert(a + b + c);
+			}
+		});
+
+	});
 </script>
 </html>

@@ -26,8 +26,11 @@ public class TestRandom {
 		System.out.println("类名称   " + class1.getName());
 		System.out.println("类名称   " + class2.getName());
 
-		if (class3 == null || class3.getName() == null)
-			System.out.println("-------------------------- " + class3.getName());
+		
+		
+		                       
+		System.out.println("-------------------------- " + Math.acos(0.8));
+		System.out.println("-------------------------- " + Math.pow(0.8,2));
 
 	}
 

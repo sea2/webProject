@@ -17,8 +17,13 @@ public class TestClass {
 
 		System.out.println(count += 5);
 
-		Info<Integer> mui = new Info<Integer>();
+		Info<Number> mui = new Info<Number>();
 		mui.setData(1);
+		Integer intNum = (Integer) mui.getData();
+		System.out.println(intNum);
+		
+		
+		
 		getData(TYPE.red);
 
 		System.out.println(PinyinUtils.ccs2Pinyin("Ww").toUpperCase());
@@ -29,7 +34,7 @@ public class TestClass {
 		list.add(1);
 		list.add(1);
 		list.add(1);
-		  String[] strArray = "".split(",");
+		String[] strArray = "".split(",");
 		System.out.println(strArray.length);
 
 	}

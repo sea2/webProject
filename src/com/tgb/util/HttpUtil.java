@@ -73,7 +73,7 @@ public class HttpUtil {
 	
 		case "/v1.0/app/":
 		case "/v1.0/app":
-			strt = "{\"code\":\"100\",\"message\":\"请求无效，请检查请求拼接完整性\",\"sign\":\"xxxxxxxxx\"}";
+			strt = "{\"code\":\"100\",\"list\":[{\"id\":\"1\",\"id1\":\"1\"},{\"id\":\"2\",\"id1\":\"2\"}],\"message\":\"请求无效，请检查请求拼接完整性\",\"sign\":\"xxxxxxxxx\"}";
 			break;
 
 		default:

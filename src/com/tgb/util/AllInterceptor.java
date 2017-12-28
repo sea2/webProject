@@ -44,23 +44,26 @@ public class AllInterceptor extends HandlerInterceptorAdapter {
 			String jsonStr = HttpUtil.interceptorHttp(requestUri, urlStr, sb.toString(), request.getMethod(),
 					request.getQueryString());
 			try {
-				// 正常接口返回
+			/*	// 正常接口返回
 				response.setContentType("application/json;charset=UTF-8");
 				response.setCharacterEncoding("UTF-8");
 				response.getWriter().write(jsonStr);
 				response.getWriter().flush();
-				response.getWriter().close();
+				response.getWriter().close();*/
 
 				// jsonp格式返回
-				/*String renderStr = "jsonpCallback" + "(" + jsonStr + ")";
+				String renderStr = "jsonpCallback" + "(" + jsonStr + ")";
 				response.setContentType("text/plain;charset=UTF-8");
-				response.getWriter().write(renderStr);*/
-
+				response.getWriter().write(renderStr);
+				response.getWriter().flush();
+				response.getWriter().close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			return false;
 		}
+		
+		//return true;
 
 	}
 
