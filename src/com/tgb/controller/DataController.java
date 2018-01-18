@@ -52,7 +52,8 @@ public class DataController {
 
 	@ResponseBody
 	@RequestMapping(value = "app/account/adddata", method = RequestMethod.POST)
-	public AddProject addData(@RequestBody JSONObject jsonObj, HttpServletRequest request, HttpServletResponse response,@RequestParam("username") String username) {
+	public AddProject addData(@RequestBody JSONObject jsonObj, HttpServletRequest request, HttpServletResponse response,
+			@RequestParam("username") String username) {
 		AddProject mAddProject = new AddProject();
 		if (jsonObj != null && jsonObj.has("projectid")) {
 			ObjectMapper mapper = new ObjectMapper();
@@ -105,7 +106,7 @@ public class DataController {
 
 	@ResponseBody
 	@RequestMapping(value = "app/account/adddatatestget", method = RequestMethod.GET)
-	public void addDataTest2( HttpServletRequest request, HttpServletResponse response) {
+	public void addDataTest2(HttpServletRequest request, HttpServletResponse response) {
 		String jsonStr = "{\"code\":\"200\",\"result\":\"{}\"}";
 		try {
 			Thread.sleep(2000);
@@ -147,7 +148,8 @@ public class DataController {
 
 	@ResponseBody
 	@RequestMapping(value = "app/account/databytype", method = RequestMethod.POST)
-	public AllProject getByType(@RequestBody JSONObject jsonObj, HttpServletRequest request, HttpServletResponse response) {
+	public AllProject getByType(@RequestBody JSONObject jsonObj, HttpServletRequest request,
+			HttpServletResponse response) {
 		AllProject mAllProject = new AllProject();
 		if (jsonObj != null && jsonObj.has("type")) {
 			List<DataTest> list = dataService.findByType(StringUtils.toInt(jsonObj.getString("type"), 0));
@@ -175,7 +177,8 @@ public class DataController {
 
 	@ResponseBody
 	@RequestMapping(value = "app/account/databyid", method = RequestMethod.POST)
-	public AllProject getById(@RequestBody JSONObject jsonObj, HttpServletRequest request, HttpServletResponse response) {
+	public AllProject getById(@RequestBody JSONObject jsonObj, HttpServletRequest request,
+			HttpServletResponse response) {
 		AllProject mAllProject = new AllProject();
 		if (jsonObj != null && jsonObj.has("id")) {
 			ProjectResult result = new ProjectResult();
@@ -361,7 +364,8 @@ public class DataController {
 
 	@ResponseBody
 	@RequestMapping(value = "app/account/productDetail", method = RequestMethod.POST)
-	public void productDetail(@RequestBody JSONObject jsonObj, HttpServletRequest request, HttpServletResponse response) {
+	public void productDetail(@RequestBody JSONObject jsonObj, HttpServletRequest request,
+			HttpServletResponse response) {
 
 		String URL = "http://test.91xcm.com:8020/v1.0/app/account/productDetail";
 
@@ -431,7 +435,8 @@ public class DataController {
 
 	@ResponseBody
 	@RequestMapping(value = "app/account/testjson", method = RequestMethod.POST)
-	public void getDataTest(@RequestBody JSONObject jsonObj, HttpServletRequest request, HttpServletResponse response) {
+	public void getDataTest(@RequestParam String str, @RequestBody JSONObject jsonObj, HttpServletRequest request,
+			HttpServletResponse response) {
 		String URL = "http://test.91xcm.com:8020/v1.0/app/system/userGuide";
 
 		ObjectMapper mapper = new ObjectMapper();
@@ -469,7 +474,8 @@ public class DataController {
 	 * @return 返回信息
 	 */
 	public String doHttpPost(String URL, String xmlInfo) {
-		System.out.println("----------------------------------------------------------request--start---------------------------------------------------------------");
+		System.out.println(
+				"----------------------------------------------------------request--start---------------------------------------------------------------");
 		System.out.println("* " + URL + "\n* 参数:" + xmlInfo);
 		byte[] xmlData = xmlInfo.getBytes();
 		InputStream instr = null;
@@ -507,7 +513,8 @@ public class DataController {
 			e.printStackTrace();
 			return "0";
 		} finally {
-			System.out.println("----------------------------------------------------------request--end---------------------------------------------------------------");
+			System.out.println(
+					"----------------------------------------------------------request--end---------------------------------------------------------------");
 			try {
 				if (instr != null)
 					instr.close();

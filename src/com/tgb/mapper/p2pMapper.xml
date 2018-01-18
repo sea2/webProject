@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- name space：必须与对应的接口全类名一致 id:必须与对应接口的某个对应的方法名一致 -->
+<mapper namespace="com.tgb.mapper.P2pmapper">
+
+
+	<!-- 第一次初始化平台数据 -->
+	<insert id="save_init" parameterType="P2pInfo">
+		insert into t_plat(name,score)
+		values(#{name},#{score})
+	</insert>
+	
+	<!-- 第一次初始化平台数据 -->
+	<insert id="delById" parameterType="int">
+		delete from t_plat where id=#{id}
+	</insert>
+
+
+
+	<select id="findAll" resultType="P2pInfo">
+		select id id,name
+		name,other_name other_name,score score,is_delete is_delete,is_trouble
+		is_trouble,icon_url icon_url,zhiji_rank zhiji_rank,
+		zhijia_url
+		zhijia_url,zhijia_code zhijia_code,tianyan_rank
+		tianyan_rank,tianyan_code tianyan_code,tianyan_level tianyan_level
+		,luopan_code luopan_code
+		,tianyan_url tianyan_url
+		from t_plat
+	</select>
+
+<update id="updateScore" parameterType="P2pInfo">
+		update t_plat set score=#{score} where id=#{id}
+	</update>
+	
+
+</mapper>

@@ -30,7 +30,7 @@ public class AllInterceptor extends HandlerInterceptorAdapter {
 		System.out.print("\n" + TimeUtil.getNowTime() + "发生拦截..." + request.getMethod() + "..." + url);
 		System.out.println("请求：" + request.getRequestURL());
 
-		if (new CustomUri().getListStr().contains(requestUri)) {
+		/*if (new CustomUri().getListStr().contains(requestUri)) {
 			return true;
 		} else {// 小财迷测试服务
 			BufferedReader in = new BufferedReader(new InputStreamReader(request.getInputStream()));
@@ -44,12 +44,12 @@ public class AllInterceptor extends HandlerInterceptorAdapter {
 			String jsonStr = HttpUtil.interceptorHttp(requestUri, urlStr, sb.toString(), request.getMethod(),
 					request.getQueryString());
 			try {
-			/*	// 正常接口返回
+				// 正常接口返回
 				response.setContentType("application/json;charset=UTF-8");
 				response.setCharacterEncoding("UTF-8");
 				response.getWriter().write(jsonStr);
 				response.getWriter().flush();
-				response.getWriter().close();*/
+				response.getWriter().close();
 
 				// jsonp格式返回
 				String renderStr = "jsonpCallback" + "(" + jsonStr + ")";
@@ -61,9 +61,9 @@ public class AllInterceptor extends HandlerInterceptorAdapter {
 				e.printStackTrace();
 			}
 			return false;
-		}
+		}*/
 		
-		//return true;
+		return true;
 
 	}
 
